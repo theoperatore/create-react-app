@@ -203,7 +203,7 @@ module.exports = {
               minimize: true,
               sourceMap: true,
               modules: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              localIdentName: '[local]__[hash:base64:5]',
             },
           },
           {
