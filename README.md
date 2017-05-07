@@ -1,6 +1,6 @@
 # theoperatore-react-scripts
 
-_Based off of react-scripts version 0.9.4_
+_Based off of react-scripts version 0.9.4 the MASTER branch_
 
 Current version of theoperatore-react-scripts: **0.9.5**
 
@@ -9,6 +9,12 @@ Yet another fork of [create-react-app](https://github.com/facebookincubator/crea
 - SASS
 - CSS Modules (default local)
 - [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json) serializer for Jest Snapshots
+
+I basically made this so I can depend on myself to keep this fork updated with CRA's react-scripts AND keep sass support and local css module support. If you want to also use this, go nuts! If there are problems I'll try to address them as they come up.
+
+I chose to base this fork after the `master` branch of [create-react-app](https://github.com/facebookincubator/create-react-app) because it has very nice things that I want to use now, namely webpack 2 support and a cleaner folder structure.
+
+There is only one caveat that has presented itself so far (see the note about errors after the usage section). If you find anything else, just open an issue and I'll address it.
 
 ## Usage
 
@@ -19,6 +25,25 @@ $ create-react-app --scripts-version theoperatore-react-scripts my-new-react-app
 ```
 
 Now you're all ready to rock!
+
+### Quick note about an error
+
+If you get the error while trying to `yarn start` or `npm start`:
+
+```
+Error: Cannot find module 'react-dev-utils/crashOverlay'
+```
+
+Then you need to add any version of `react-dev-utils` to your project `>0.5.2`. This project is a fork of the master branch of `create-react-app` and as such some things haven't been published yet.
+
+This problem should resolve itself eventually with the next release of `react-dev-utils` however in the meantime, this bandage will solve it:
+
+```bash
+yarn add --dev react-dev-utils@canary
+```
+
+This will install a version of `react-dev-utils` that is compatible with this version of react-scripts.
+
 
 ## SASS Examples
 
